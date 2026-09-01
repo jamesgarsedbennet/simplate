@@ -1,0 +1,7 @@
+name = "simplate"
+compatibility_date = "2026-09-01"
+
+# Static site only — no Worker script.
+# Fixes: "Could not detect a directory containing static files"
+[assets]
+directory = "."
