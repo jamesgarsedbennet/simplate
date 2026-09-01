@@ -19,10 +19,14 @@
 html, body { margin: 0; padding: 0; }
 body {
   font-family: "Segoe UI", "Trebuchet MS", system-ui, sans-serif;
-  background:
-    radial-gradient(1200px 600px at 10% -10%, #1a4a72 0%, transparent 50%),
-    radial-gradient(900px 500px at 110% 10%, #0d3b5c 0%, transparent 45%),
-    linear-gradient(180deg, #07141f 0%, #0b1c2c 40%, #08131d 100%);
+  background-color: #07141f;
+  background-image:
+    linear-gradient(180deg, rgba(7, 20, 31, 0.78) 0%, rgba(8, 19, 29, 0.86) 100%),
+    url("cockpit.jpg");
+  background-size: cover;
+  background-position: center 42%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--ink);
   min-height: 100vh;
 }
@@ -311,6 +315,13 @@ footer {
   line-height: 1.5;
 }
 footer a { color: var(--sky-2); }
+.build {
+  display: block;
+  margin-top: 6px;
+  color: #6d8799;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
 
 @media (max-width: 920px) {
   header { grid-template-columns: auto 1fr; }
