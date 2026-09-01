@@ -32,3 +32,25 @@ function addRim(mesh, p, holes) {
     extrudeProfile(mesh, [a, b, c, dpt], [], p.t, p.t + d);
   }
 }
+
+function capPocketDepth() {
+  const tEl = $("thickness");
+  const dEl = $("pocketDepth");
+  if (!tEl || !dEl) return;
+  const t = parseFloat(tEl.value);
+  if (!isFinite(t)) return;
+  const max = Math.max(0, Math.round((t - 0.6) * 10) / 10);
+  dEl.max = String(max);
+  const cur = parseFloat(dEl.value);
+  if (isFinite(cur) && cur > max) dEl.value = String(max);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  capPocketDepth();
+  for (const id of ["thickness", "pocketDepth"]) {
+    const el = $(id);
+    if (!el) continue;
+    el.addEventListener("input", capPocketDepth);
+    el.addEventListener("change", capPocketDepth);
+  }
+});
