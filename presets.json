@@ -1,0 +1,26 @@
+{
+  "presets": [
+    {"id": "custom", "brand": "", "name": "Custom", "holes": "custom", "family": ""},
+    {"id": "winctrl-rmp", "brand": "WinCtrl", "name": "A320 RMP", "holes": "known", "width": 146, "height": 82, "thickness": 5, "holeDia": 4.2, "offsetX": 5, "offsetTop": 12.5, "offsetBottom": 12.5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "winctrl-ecam", "brand": "WinCtrl", "name": "A320 ECAM", "holes": "known", "width": 150, "height": 75, "thickness": 5, "holeDia": 4.2, "offsetX": 5, "offsetTop": 11.5, "offsetBottom": 11.5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "winctrl-tcas", "brand": "WinCtrl", "name": "A320 TCAS", "holes": "known", "width": 146, "height": 55, "thickness": 5, "holeDia": 4.2, "offsetX": 5, "offsetTop": 13.5, "offsetBottom": 13.5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "winctrl-speedbrake", "brand": "WinCtrl", "name": "A320 Speed brake", "holes": "known", "width": 146, "height": 114, "thickness": 5, "holeDia": 4.2, "offsetX": 5, "offsetTop": 19, "offsetBottom": 19, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "winctrl-flaps", "brand": "WinCtrl", "name": "A320 Flaps", "holes": "known", "width": 146, "height": 120, "thickness": 5, "holeDia": 4.2, "offsetX": 5, "offsetTop": 22, "offsetBottom": 22, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "winctrl-rudtrim", "brand": "WinCtrl", "name": "A320 Rudder trim / park brake", "holes": "known", "width": 124, "height": 100, "thickness": 5, "holeDia": 4.2, "offsetX": 7, "offsetTop": 11, "offsetBottom": 11, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "simgauges-rmp", "brand": "SimGauges", "name": "A320 RMP", "holes": "known", "width": 146, "height": 84, "thickness": 5, "holeDia": 4.5, "offsetX": 5, "offsetTop": 13, "offsetBottom": 13, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "simgauges-acp", "brand": "SimGauges", "name": "A320 ACP", "holes": "size-only", "width": 146, "height": 85, "thickness": 5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "simgauges-tcas", "brand": "SimGauges", "name": "A320 TCAS", "holes": "known", "width": 146, "height": 57.5, "thickness": 5, "holeDia": 4.5, "offsetX": 5, "offsetTop": 15.25, "offsetBottom": 15.25, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "simgauges-ecam", "brand": "SimGauges", "name": "A320 ECAM", "holes": "known", "width": 146, "height": 75.5, "thickness": 5, "holeDia": 4.5, "offsetX": 5, "offsetTop": 13, "offsetBottom": 13, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "simgauges-ecam-wide", "brand": "SimGauges", "name": "A320 ECAM (8VU width)", "holes": "known", "width": 218.6, "height": 75.5, "thickness": 5, "holeDia": 4.5, "offsetX": 5, "offsetTop": 13, "offsetBottom": 13, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "simgauges-8vu", "brand": "SimGauges", "name": "A320 8VU", "holes": "known", "width": 218.6, "height": 65, "thickness": 5, "holeDia": 4.5, "offsetX": 5, "offsetTop": 13, "offsetBottom": 13, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "simgauges-ecam-8vu", "brand": "SimGauges", "name": "A320 ECAM + 8VU", "holes": "known", "width": 218.6, "height": 140.5, "thickness": 5, "holeDia": 4.5, "offsetX": 5, "offsetTop": 13, "offsetBottom": 13, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "simgauges-wx", "brand": "SimGauges", "name": "A320 Weather radar", "holes": "size-only", "width": 146, "height": 57, "thickness": 5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "rowsfire-a109-ecam", "brand": "Rowsfire", "name": "A320 A109 ECAM", "holes": "size-only", "width": 230, "height": 145, "thickness": 5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "rowsfire-a111-rmp-acp", "brand": "Rowsfire", "name": "A320 A111 RMP/ACP", "holes": "size-only", "width": 170, "height": 145, "thickness": 5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "rowsfire-a112-wx-light", "brand": "Rowsfire", "name": "A320 A112 Weather radar + light", "holes": "size-only", "width": 112, "height": 145, "thickness": 5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "rowsfire-a113-atc-light", "brand": "Rowsfire", "name": "A320 A113 ATC + light", "holes": "size-only", "width": 107, "height": 145, "thickness": 5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "sl3-ecam-switching", "brand": "SL3", "name": "A320 ECAM + switching", "holes": "size-only", "width": 220, "height": 140, "thickness": 5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "sl3-wx", "brand": "SL3", "name": "A320 Weather radar", "holes": "size-only", "width": 146, "height": 66, "thickness": 5, "twoHoles": false, "dzus": false, "family": "A320"},
+    {"id": "sl3-flood-dimmer", "brand": "SL3", "name": "A320 Flood dimmer", "holes": "size-only", "width": 51, "height": 145, "thickness": 5, "twoHoles": false, "dzus": false, "family": "A320"}
+  ]
+}
