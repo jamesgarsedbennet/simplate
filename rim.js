@@ -275,6 +275,72 @@ function syncTwoHoles() {
   if (typeof refresh === "function") refresh();
 }
 
+function loadExample() {
+  /* sample button removed */
+}
+
+function fy(p, y) {
+  return (p.h - y).toFixed(3);
+}
+
+function svgPath(p, pts, close) {
+  if (!pts || pts.length < 2) return "";
+  let d = `M ${pts[0][0].toFixed(3)} ${fy(p, pts[0][1])}`;
+  for (let i = 1; i < pts.length; i++) d += ` L ${pts[i][0].toFixed(3)} ${fy(p, pts[i][1])}`;
+  if (close) d += " Z";
+  return d;
+}
+
+function buildSvg(p) {
+  const holes = holeSpecs(p);
+  const loop = topLoop(p, holes);
+  const parts = [];
+  parts.push(`<?xml version="1.0" encoding="UTF-8"?>`);
+  parts.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${p.w}mm" height="${p.h}mm" viewBox="0 0 ${p.w} ${p.h}">`);
+  parts.push(`  <title>SimPlate ${p.w}x${p.h}x${p.t} mm</title>`);
+  parts.push(`  <g id="cut-outline" fill="none" stroke="#1a1a1a" stroke-width="0.2">`);
+  parts.push(`    <rect x="0" y="0" width="${p.w}" height="${p.h}"/>`);
+  parts.push(`  </g>`);
+  parts.push(`  <g id="cut-holes" fill="none" stroke="#1a1a1a" stroke-width="0.2">`);
+  for (const hh of holes) {
+    parts.push(`    <circle cx="${hh.x.toFixed(3)}" cy="${fy(p, hh.y)}" r="${hh.rHole.toFixed(3)}"/>`);
+  }
+  parts.push(`  </g>`);
+  if (p.pocketDepth > 0.001 && p.pocketDist > 0.001 && loop.length > 3) {
+    parts.push(`  <g id="engrave-pockets" fill="none" stroke="#4a90c8" stroke-width="0.15">`);
+    parts.push(`    <path d="${svgPath(p, loop, true)}"/>`);
+    parts.push(`  </g>`);
+  }
+  if (p.grainOn && p.grainD > 0 && loop.length > 3) {
+    parts.push(`  <g id="engrave-rim" fill="none" stroke="#c9a227" stroke-width="${Math.max(0.2, p.grainW).toFixed(2)}">`);
+    parts.push(`    <path d="${svgPath(p, loop, true)}"/>`);
+    parts.push(`  </g>`);
+  }
+  parts.push(`</svg>`);
+  return parts.join("\n");
+}
+
+function downloadSvg() {
+  const p = params();
+  const issues = validate(p);
+  const blocking = issues.filter((s) => !s.includes("huge files"));
+  if (blocking.length) {
+    $("warn").textContent = blocking[0];
+    return;
+  }
+  const svg = buildSvg(p);
+  const name = filename(p).replace(/\.stl$/i, ".svg");
+  const blob = new Blob([svg], { type: "image/svg+xml" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  updateMeta(p, { file: name });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   capPocketDepth();
   for (const id of ["thickness", "pocketDepth"]) {
@@ -288,4 +354,6 @@ document.addEventListener("DOMContentLoaded", () => {
     two.addEventListener("change", syncTwoHoles);
     syncTwoHoles();
   }
+  const svgBtn = $("btnSvg");
+  if (svgBtn) svgBtn.addEventListener("click", downloadSvg);
 });
