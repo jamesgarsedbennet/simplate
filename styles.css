@@ -119,6 +119,14 @@ header {
 }
 
 .form { padding: 16px 16px 18px; }
+.preset-label { margin-bottom: 12px; }
+.preset-label select { width: 100%; }
+.checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin: 0 0 8px;
+}
 .preview-card { padding: 16px; display: flex; flex-direction: column; min-height: 640px; }
 
 .section-title {
@@ -330,4 +338,24 @@ footer a { color: var(--sky-2); }
   .stats { grid-column: 1 / -1; text-align: left; }
   .layout { grid-template-columns: 1fr; }
   canvas#view { height: 360px; }
+}
+
+.fit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  margin: -4px 0 10px;
+}
+.fit {
+  background: #0a1824;
+  color: var(--muted);
+  border: 1px solid #2e5068;
+  border-radius: 10px;
+  padding: 8px 6px;
+  font-size: 12px;
+}
+.fit.on {
+  color: var(--ink);
+  border-color: var(--sky);
+  background: rgba(58,160,232,.15);
 }
