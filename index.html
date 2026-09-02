@@ -48,6 +48,21 @@
           <input id="twoHoles" type="checkbox" />
           Two holes only
         </label>
+        <label class="check">
+          <input id="dzusOn" type="checkbox" />
+          DZUS rails
+        </label>
+        <div class="row" id="dzusRow" style="display:none">
+          <label>Units high
+            <input id="dzusN" type="number" min="2" max="30" step="1" value="7" />
+          </label>
+          <label>Plate width
+            <select id="dzusW">
+              <option value="145.65" selected>145.65 mm (fit)</option>
+              <option value="146.05">146.05 mm (5¾")</option>
+            </select>
+          </label>
+        </div>
         <p class="hint" id="holeHint">Four holes in two pairs. From side is left and right. Top pair from top only moves the upper two. Bottom pair from bottom only moves the lower two.</p>
         <div class="row">
           <label>Hole Ø mm
@@ -129,14 +144,14 @@
         </div>
         <footer>
           SimPlate by Sim Jim.
-          <span class="build">Build 17 · 2026-09-02</span>
+          <span class="build">Build 18 · 2026-09-02</span>
         </footer>
       </section>
     </div>
   </div>
   <script src="earcut.min.js"></script>
   <script src="panel.js?v=6"></script>
-  <script src="rim.js?v=5"></script>
+  <script src="rim.js?v=6"></script>
   <button id="btnExample" type="button" hidden></button>
 </body>
 </html>
