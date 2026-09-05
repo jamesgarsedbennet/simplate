@@ -81,13 +81,6 @@ header {
   max-width: 46ch;
   line-height: 1.35;
 }
-.brand .social { margin-top: 8px; }
-.brand .social a {
-  color: var(--sky-2);
-  font-weight: 700;
-  text-decoration: none;
-}
-.brand .social a:hover { text-decoration: underline; }
 
 .stats { text-align: right; }
 .counter {
@@ -358,4 +351,57 @@ footer a { color: var(--sky-2); }
   color: var(--ink);
   border-color: var(--sky);
   background: rgba(58,160,232,.15);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(4, 10, 16, 0.62);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 16px;
+  overflow: auto;
+}
+.modal[hidden] { display: none; }
+.modal-card {
+  width: min(520px, 100%);
+  background: linear-gradient(180deg, rgba(22,48,68,.97), rgba(12,28,40,.97));
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 14px 16px 16px;
+}
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.modal-head h2 { margin: 0; font-size: 18px; }
+.cut-add {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 8px 0 12px;
+}
+.form > #btnCuts {
+  width: 100%;
+  margin: 0 0 8px;
+}
+.cut-list { display: flex; flex-direction: column; gap: 10px; }
+.cut-item {
+  background: #0a1824;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+}
+.cut-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--sky-2);
 }
