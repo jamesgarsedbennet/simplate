@@ -27,13 +27,10 @@
         </div>
       </div>
     </header>
-
     <div class="layout">
       <section class="card form">
         <label class="preset-label">Match Commercial Panel
-          <select id="preset">
-            <option value="custom">Custom</option>
-          </select>
+          <select id="preset"><option value="custom">Custom</option></select>
         </label>
         <div class="fit-row" id="fitRow" hidden>
           <button type="button" class="fit on" data-fit="same">Same size</button>
@@ -41,35 +38,19 @@
           <button type="button" class="fit" data-fit="height">Match height</button>
         </div>
         <p class="hint" id="fitHint" hidden></p>
-
         <div class="section-title">Plate size</div>
         <div class="row">
-          <label>Width mm
-            <input id="width" type="number" min="20" max="600" step="0.1" value="188" />
-          </label>
-          <label>Height mm
-            <input id="height" type="number" min="20" max="600" step="0.1" value="145" />
-          </label>
-          <label>Thickness mm
-            <input id="thickness" type="number" min="1.5" max="20" step="0.1" value="5" />
-          </label>
+          <label>Width mm<input id="width" type="number" min="20" max="600" step="0.1" value="188" /></label>
+          <label>Height mm<input id="height" type="number" min="20" max="600" step="0.1" value="145" /></label>
+          <label>Thickness mm<input id="thickness" type="number" min="1.5" max="20" step="0.1" value="5" /></label>
         </div>
-
         <div class="section-title">Screw holes</div>
         <div class="checks">
-          <label class="check">
-            <input id="twoHoles" type="checkbox" />
-            Two holes
-          </label>
-          <label class="check">
-            <input id="dzusOn" type="checkbox" />
-            DZUS
-          </label>
+          <label class="check"><input id="twoHoles" type="checkbox" /> Two holes</label>
+          <label class="check"><input id="dzusOn" type="checkbox" /> DZUS</label>
         </div>
         <div class="row" id="dzusRow" style="display:none">
-          <label>Units high
-            <input id="dzusN" type="number" min="2" max="30" step="1" value="7" />
-          </label>
+          <label>Units high<input id="dzusN" type="number" min="2" max="30" step="1" value="7" /></label>
           <label>Plate width
             <select id="dzusW">
               <option value="145.65" selected>145.65 mm (fit)</option>
@@ -79,52 +60,29 @@
         </div>
         <p class="hint" id="holeHint">Side is left/right. Top and bottom pairs move on their own.</p>
         <div class="row">
-          <label>Hole Ø mm
-            <input id="holeDia" type="number" min="2" max="12" step="0.1" value="4.3" />
-          </label>
-          <label>From side mm
-            <input id="offsetX" type="number" min="1" max="80" step="0.1" value="5" />
-          </label>
-          <label id="offsetTopLabel">Top pair from top mm
-            <input id="offsetTop" type="number" min="1" max="200" step="0.1" value="5" />
-          </label>
+          <label>Hole Ø mm<input id="holeDia" type="number" min="2" max="12" step="0.1" value="4.3" /></label>
+          <label>From side mm<input id="offsetX" type="number" min="1" max="80" step="0.1" value="5" /></label>
+          <label id="offsetTopLabel">Top pair from top mm<input id="offsetTop" type="number" min="1" max="200" step="0.1" value="5" /></label>
         </div>
         <div class="row-2 row" id="bottomPairRow">
-          <label>Bottom pair from bottom mm
-            <input id="offsetBottom" type="number" min="1" max="200" step="0.1" value="5" />
-          </label>
+          <label>Bottom pair from bottom mm<input id="offsetBottom" type="number" min="1" max="200" step="0.1" value="5" /></label>
         </div>
-
         <div class="section-title">Pocket around each hole</div>
         <p class="hint">The recess curves around the hole, then runs straight to the side. It only also opens to the top or bottom when the hole is close enough that the pocket reaches that edge. Further down the board you get a U into the side only, like a real Airbus panel.</p>
         <div class="row-2 row">
-          <label>Distance from hole mm
-            <input id="pocketDist" type="number" min="0" max="20" step="0.1" value="2.9" />
-          </label>
-          <label>Pocket depth mm
-            <input id="pocketDepth" type="number" min="0" max="15" step="0.1" value="3.0" />
-          </label>
+          <label>Distance from hole mm<input id="pocketDist" type="number" min="0" max="20" step="0.1" value="2.9" /></label>
+          <label>Pocket depth mm<input id="pocketDepth" type="number" min="0" max="15" step="0.1" value="3.0" /></label>
         </div>
-
         <div class="section-title">Cutouts</div>
         <p class="hint">Optional rounded windows for e.g. Stream Deck under the plate. 1×1 is a single opening.</p>
         <button class="ghost" id="btnCuts" type="button">Edit cutouts</button>
-
         <div class="section-title">Edge emboss</div>
-        <label class="check">
-          <input id="grainOn" type="checkbox" />
-          Emboss the whole top face
-        </label>
+        <label class="check"><input id="grainOn" type="checkbox" /> Emboss the whole top face</label>
         <p class="hint">A thin raised lip around the outer edge of the plate — not a surface texture. Width is how wide that lip is. Depth is how high it sits (0.1 mm steps). The flat face inside is finished with Bambu ironing, not by modelling grit into the STL.</p>
         <div class="row-2 row">
-          <label>Emboss width mm
-            <input id="grainW" type="number" min="0.1" max="8" step="0.1" value="1.2" />
-          </label>
-          <label>Emboss depth mm
-            <input id="grainD" type="number" min="0" max="2" step="0.1" value="0.2" />
-          </label>
+          <label>Emboss width mm<input id="grainW" type="number" min="0.1" max="8" step="0.1" value="1.2" /></label>
+          <label>Emboss depth mm<input id="grainD" type="number" min="0" max="2" step="0.1" value="0.2" /></label>
         </div>
-
         <p class="warn" id="warn"></p>
         <div class="actions">
           <button class="primary" id="btnGo" type="button">Generate STL</button>
@@ -133,12 +91,8 @@
         <a class="btn instagram" href="https://www.instagram.com/sim_jim_uk/" target="_blank" rel="noopener">Instagram @sim_jim_uk</a>
         <a class="btn coffee" href="https://www.buymeacoffee.com/simjim" target="_blank" rel="noopener">Buy Sim Jim a coffee</a>
       </section>
-
       <section class="card preview-card">
-        <div class="preview-head">
-          <h2>Panel preview</h2>
-          <span>Top view</span>
-        </div>
+        <div class="preview-head"><h2>Panel preview</h2><span>Top view</span></div>
         <canvas id="view" aria-label="Panel preview"></canvas>
         <div class="meta">
           <div><span>Size</span><b id="metaSize">—</b></div>
@@ -160,10 +114,7 @@
             <div><dt>Ironing inset</dt><dd>0.21 mm</dd></div>
           </dl>
         </div>
-        <footer>
-          SimPlate by Sim Jim.
-          <span class="build">Build 20 · 2026-09-05</span>
-        </footer>
+        <footer>SimPlate by Sim Jim.<span class="build">Build 20 · 2026-09-05</span></footer>
       </section>
     </div>
   </div>
@@ -172,9 +123,8 @@
   <script src="rim.js?v=6"></script>
   <script src="dzus.js?v=1"></script>
   <script src="presets.js?v=2"></script>
-  <script src="cutouts.js?v=2"></script>
+  <script src="cutouts.js?v=3"></script>
   <button id="btnExample" type="button" hidden></button>
-
   <div class="modal" id="cutModal" hidden>
     <div class="modal-card">
       <div class="modal-head">
