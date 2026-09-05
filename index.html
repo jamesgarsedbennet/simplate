@@ -6,7 +6,7 @@
   <title>SimPlate — blank flight-sim panels</title>
   <meta name="description" content="Generate printable blank cockpit panels as STL files. No login. Runs in your browser." />
   <link rel="icon" href="logo.png" />
-  <link rel="stylesheet" href="styles.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=16" />
 </head>
 <body>
   <div class="page-bg"></div>
@@ -106,6 +106,10 @@
           </label>
         </div>
 
+        <div class="section-title">Cutouts</div>
+        <p class="hint">Optional rounded windows for e.g. Stream Deck under the plate. 1×1 is a single opening.</p>
+        <button class="ghost" id="btnCuts" type="button">Edit cutouts</button>
+
         <div class="section-title">Edge emboss</div>
         <label class="check">
           <input id="grainOn" type="checkbox" />
@@ -158,16 +162,34 @@
         </div>
         <footer>
           SimPlate by Sim Jim.
-          <span class="build">Build 19 · 2026-09-02</span>
+          <span class="build">Build 20 · 2026-09-05</span>
         </footer>
       </section>
     </div>
   </div>
   <script src="earcut.min.js"></script>
-  <script src="panel.js?v=6"></script>
-  <script src="rim.js?v=5"></script>
+  <script src="panel.js?v=7"></script>
+  <script src="rim.js?v=6"></script>
   <script src="dzus.js?v=1"></script>
   <script src="presets.js?v=2"></script>
+  <script src="cutouts.js?v=2"></script>
   <button id="btnExample" type="button" hidden></button>
+
+  <div class="modal" id="cutModal" hidden>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>Cutouts</h2>
+        <button type="button" class="ghost small" id="btnCutClose">Close</button>
+      </div>
+      <p class="hint">From the plate top-left. Stream Deck sizes use 17 mm keys, 2.6 mm gap, R 2.5 from a measured MK.2. Through cuts a hole. Untick Through and set indent depth to recess only.</p>
+      <div class="cut-add">
+        <button type="button" class="ghost small" data-cut="blank">Single cutout</button>
+        <button type="button" class="ghost small" data-cut="mini">Stream Deck Mini 3×2</button>
+        <button type="button" class="ghost small" data-cut="sd">Stream Deck 5×3</button>
+        <button type="button" class="ghost small" data-cut="xl">Stream Deck XL 8×4</button>
+      </div>
+      <div id="cutList" class="cut-list"></div>
+    </div>
+  </div>
 </body>
 </html>
