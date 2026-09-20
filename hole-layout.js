@@ -15,8 +15,8 @@ holeSpecs = function (p) {
     const toBottom = p.oBot <= rPocket + 0.05;
     const toTop = p.oTop <= rPocket + 0.05;
     return [
-      { x: p.ox, y: p.oBot, openX: "left", openY: toBottom ? "bottom" : null, rHole, rPocket },
-      { x: p.w - p.ox, y: p.h - p.oTop, openX: "right", openY: toTop ? "top" : null, rHole, rPocket },
+      { x: p.ox, y: p.h - p.oTop, openX: "left", openY: toTop ? "top" : null, rHole, rPocket },
+      { x: p.w - p.ox, y: p.oBot, openX: "right", openY: toBottom ? "bottom" : null, rHole, rPocket },
     ];
   }
   return _holeSpecsLayout(p);
@@ -55,7 +55,7 @@ function syncHoleLayout() {
   const hint = $("holeHint");
   if (hint) {
     hint.textContent = layout === "opposite"
-      ? "Bottom left and top right. Side is left/right. Top and bottom offsets move each hole on its own."
+      ? "Top left and bottom right. Side is left/right. Top and bottom offsets move each hole on its own."
       : pair
       ? "One pair: a hole on the left and one on the right. From top moves both together. Slim filler plates use this."
       : "Four holes in two pairs. From side is left and right. Top pair from top only moves the upper two. Bottom pair from bottom only moves the lower two.";
