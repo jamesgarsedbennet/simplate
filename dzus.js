@@ -46,8 +46,9 @@ function applyDzus() {
   $("offsetTop").value = String(fromEnd);
   $("offsetBottom").value = String(fromEnd);
   $("holeDia").value = String(DZUS.holeD);
-  if (n < 4 && $("twoHoles") && !$("twoHoles").checked) {
-    $("twoHoles").checked = true;
+  if (n < 4 && $("holeLayout") && $("holeLayout").value === "four") {
+    $("holeLayout").value = "pair";
+    if ($("twoHoles")) $("twoHoles").checked = true;
     if (typeof syncTwoHoles === "function") syncTwoHoles();
   }
   if (typeof refresh === "function") refresh();
