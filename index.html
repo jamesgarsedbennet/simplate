@@ -6,7 +6,7 @@
   <title>SimPlate — blank flight-sim panels</title>
   <meta name="description" content="Generate printable blank cockpit panels as STL files. No login. Runs in your browser." />
   <link rel="icon" href="logo.png" />
-  <link rel="stylesheet" href="styles.css?v=16" />
+  <link rel="stylesheet" href="styles.css?v=18" />
 </head>
 <body>
   <div class="page-bg"></div>
@@ -123,7 +123,7 @@
             <div><dt>Ironing inset</dt><dd>0.21 mm</dd></div>
           </dl>
         </div>
-        <footer>SimPlate by Sim Jim.<span class="build">Build 21 · 2026-09-20</span></footer>
+        <footer>SimPlate by Sim Jim.<span class="build">Build 22 · 2026-09-20</span></footer>
       </section>
     </div>
   </div>
@@ -133,8 +133,9 @@
   <script src="hole-layout.js?v=2"></script>
   <script src="dzus.js?v=2"></script>
   <script src="presets.js?v=2"></script>
-  <script src="cutouts.js?v=3"></script>
+  <script src="cutouts.js?v=6"></script>
   <script src="cut-hook.js?v=1"></script>
+  <script src="stl-punch.js?v=50"></script>
   <button id="btnExample" type="button" hidden></button>
   <div class="modal" id="cutModal" hidden>
     <div class="modal-card">
@@ -148,6 +149,35 @@
         <button type="button" class="ghost small" data-cut="mini">Stream Deck Mini 3×2</button>
         <button type="button" class="ghost small" data-cut="sd">Stream Deck 5×3</button>
         <button type="button" class="ghost small" data-cut="xl">Stream Deck XL 8×4</button>
+      </div>
+      <div class="stl-box">
+        <div class="section-title">Punch from STL</div>
+        <p class="hint"><strong>Experimental.</strong> Drops a flat slice of a binary STL through the plate, not a 3D subtract. Axis-aligned X/Y/Z only; messy or huge meshes may give a broken outline. Add Cutout keeps that punch; load another STL to add a second. Check the plate preview before you print.</p>
+        <input id="stlFile" type="file" accept=".stl" />
+        <p class="hint" id="stlStatus"></p>
+        <div id="stlTools" hidden>
+          <div class="row row-2">
+            <label>Slice axis
+              <select id="stlAxis">
+                <option value="0">⟂ X (YZ outline)</option>
+                <option value="1">⟂ Y (XZ outline)</option>
+                <option value="2">⟂ Z (XY outline)</option>
+              </select>
+            </label>
+            <label>Height mm<input id="stlHeightNum" type="number" step="0.2" /></label>
+          </div>
+          <input id="stlHeight" type="range" />
+          <p class="hint" id="stlHeightHint"></p>
+          <canvas id="stlThumb" width="480" height="140"></canvas>
+          <div class="row row-2">
+            <label>From left mm<input id="stlLeft" type="number" min="0" step="0.1" value="10" /></label>
+            <label>From top mm<input id="stlTop" type="number" min="0" step="0.1" value="10" /></label>
+          </div>
+          <label>Clearance mm<input id="stlClear" type="number" min="0" max="20" step="0.1" value="0" /></label>
+          <p class="hint">Clearance scales the outline, same shape. Gold outline on the plate. Drag it on the preview below.</p>
+          <canvas id="stlPlace" width="520" height="360"></canvas>
+          <div class="row row-2"><button type="button" class="ghost" id="stlCenter">Center</button><button type="button" class="ghost" id="stlAdd">Add Cutout</button></div>
+        </div>
       </div>
       <div id="cutList" class="cut-list"></div>
     </div>
