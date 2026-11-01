@@ -62,6 +62,7 @@
               <option value="four">Four holes</option>
               <option value="pair">Two holes, same end</option>
               <option value="opposite">Two holes, opposite corners</option>
+              <option value="none">No holes</option>
             </select>
           </label>
         </div>
@@ -84,7 +85,7 @@
           </label>
         </div>
         <p class="hint" id="holeHint">Side is left/right. Top and bottom pairs move on their own.</p>
-        <div class="row">
+        <div class="row" id="holeOffsetRow">
           <label>Hole Ø mm
             <input id="holeDia" type="number" min="2" max="12" step="0.1" value="4.3" />
           </label>
@@ -101,6 +102,7 @@
           </label>
         </div>
 
+        <div id="pocketBlock">
         <div class="section-title">Pocket around each hole</div>
         <p class="hint">The recess curves around the hole, then runs straight to the side. It only also opens to the top or bottom when the hole is close enough that the pocket reaches that edge. Further down the board you get a U into the side only, like a real Airbus panel.</p>
         <div class="row-2 row">
@@ -110,6 +112,7 @@
           <label>Pocket depth mm
             <input id="pocketDepth" type="number" min="0" max="15" step="0.1" value="3.0" />
           </label>
+        </div>
         </div>
 
         <div class="section-title">Cutouts</div>
@@ -193,7 +196,7 @@
         </div>
         <footer>
           SimPlate by Sim Jim.
-          <span class="build">Build 23 · 2026-09-20</span>
+          <span class="build">Build 24 · 2026-11-01</span>
         </footer>
       </section>
     </div>
@@ -201,7 +204,7 @@
   <script src="earcut.min.js"></script>
   <script src="panel.js?v=7"></script>
   <script src="rim.js?v=6"></script>
-  <script src="hole-layout.js?v=2"></script>
+  <script src="hole-layout.js?v=3"></script>
   <script src="dzus.js?v=2"></script>
   <script src="presets.js?v=2"></script>
   <script src="cutouts.js?v=6"></script>
